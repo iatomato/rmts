@@ -1,4 +1,5 @@
 #!/bin/bash
+declare readonly SCRIPTE_NAME="rmts"
 declare readonly VERSION=0.1~
 declare readonly DEFAULT_SIZE=1000
 declare readonly DEFAULT_BIN="$HOME/.local/bin"
@@ -28,7 +29,7 @@ if [ ! -e $trash ]; then
     mkdir $trash
 fi
 
-cat <<EOF > $bin/rmts
+cat <<EOF > $bin/$SCRIPTE_NAME
 #!/bin/bash
 
 GLABLE_TRASH_DIR=$bin
@@ -42,3 +43,5 @@ else
         echo "error: '$GLABLE_TRASH_DIR' Storage capacity is full"
 fi
 EOF
+
+chmod +x $bin/SCRIPTE_NAME
